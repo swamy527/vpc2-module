@@ -5,7 +5,7 @@ variable "dns_hostnames" {
 
 variable "cidr_block" {
   type    = string
-  default = "10.0.0.0/16" #optional
+  default = "10.0.0.0/16" #optionals
 }
 
 
@@ -36,7 +36,20 @@ variable "private_subnet_cidr" {
   type = list(string)
 }
 
+variable "database_subnet_cidr" {
+  type = list(string)
+}
+
 variable "mygw_tags" {
   type    = map(string)
   default = {}
+}
+
+variable "is_peering_required" {
+  type    = bool
+  default = false
+}
+
+variable "acceptor_vpc_id" {
+  default = ""
 }
